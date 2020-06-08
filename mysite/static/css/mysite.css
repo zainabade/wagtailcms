@@ -1,0 +1,12 @@
+body {
+    background-color: blueviolet;
+    margin-top: 20px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #fff; 
+    margin-top: 40px;
+    padding-left: 100px;
+    font-size: 40px;
+}
