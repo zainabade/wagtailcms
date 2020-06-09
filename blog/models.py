@@ -2,6 +2,7 @@ from django.db import models
 from wagtail.core.models import Page
 from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import FieldPanel
+from wagtail.images.edit_handlers import ImageChooserPanel
 
 class BlogIndexPage(Page):
     intro = RichTextField(blank=True)
@@ -21,20 +22,22 @@ class BlogPage(Page):
     intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
 
+    image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL
+    ) 
+
     content_panels = Page.content_panels + [
         FieldPanel('date'),
         FieldPanel('intro'),
         FieldPanel('body', classname="full"),
+        ImageChooserPanel('image'),
     ]
+    
 
-# in the imports
-from wagtail.images.edit_handlers import ImageChooserPanel
+
 # in your BlogPage class
-image = models.ForeignKey(
-    'wagtailimages.Image',
-    null=True,
-    blank=True,
-    on_delete=models.SET_NULL
-)
-# in your content_panels for BlogPage
-ImageChooserPanel('image'),
+
+# in your content_panels for BlogPage 
