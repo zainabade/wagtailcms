@@ -173,3 +173,4 @@ if "AWS_STORAGE_BUCKET_NAME" in env:
     if "AWS_S3_CUSTOM_DOMAIN" in env:
         AWS_S3_CUSTOM_DOMAIN = env["AWS_S3_CUSTOM_DOMAIN"]
         AWS_S3_URL_PROTOCOL = env.get("AWS_S3_URL_PROTOCOL", "https:")
+        
