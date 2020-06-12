@@ -29,11 +29,6 @@
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
-        {% wagtailuserbar %}
-        <div class="container ph3 ph5-ns">
-            {% block content %}{% endblock %}
-        </div>
-
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,6 +56,11 @@
               </form>
             </div>
           </nav>
+        
+        {% wagtailuserbar %}
+        <div class="container ph3 ph5-ns">
+            {% block content %}{% endblock %}
+        </div>
         
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/mysite.js' %}"></script>
